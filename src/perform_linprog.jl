@@ -66,12 +66,12 @@ function perform_linprog(A,b,c,maxit=-1,tol=1e-10)
             end
             it = it+1
             if df >= 0                         # apply Bland's rule to avoid cycling
-                J = find(r.<0)
+                J = findall(r.<0)
                 Nq = minimum(N[J])
-                q = find(N.==Nq)[1]
+                q = findall(N.==Nq)[1]
             end
             d = vec(D*A[:,N[q]])
-            I = find(d .> tol)
+            I = findall(d .> tol)
             if isempty(I)
                 print("Solution is unbounded")
                 it = -it
@@ -81,9 +81,9 @@ function perform_linprog(A,b,c,maxit=-1,tol=1e-10)
             r,p = findmin(xbd)
             p = I[p]
             if df >= 0                         # apply Bland's rule to avoid cycling
-                J = find(xbd .== r)
+                J = findall(xbd .== r)
                 Bp = minimum(B[I[J]])
-                p = find(B .== Bp)[1]
+                p = findall(B .== Bp)[1]
             end
             xb= xb - r*d
 
@@ -105,7 +105,7 @@ function perform_linprog(A,b,c,maxit=-1,tol=1e-10)
 
         end
         xb=xb+D*(b-A[:,B]*xb);  # iterative refinement
-        I = find(xb .< 0)                  # must be due to rounding error
+        I = findall(xb .< 0)                  # must be due to rounding error
         if length(I) > 0
             xb[I]=xb[I]-xb[I]                      # so correct
         end

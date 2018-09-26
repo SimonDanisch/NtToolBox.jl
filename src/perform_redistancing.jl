@@ -50,12 +50,12 @@ function perform_redistancing(D)
     Vv = max([v1 zeros(n, 1)], [zeros(n,1) v2])
 
     V = zeros(n, n)
-    I = find(Ah .> 0)
+    I = findall(Ah .> 0)
     V[I] = Vh[I]
-    I = find(Av .> 0)
+    I = findall(Av .> 0)
     V[I] = max(V[I], Vv[I])
 
-    I = find(V .!= 0)
+    I = findall(V .!= 0)
     x, y = ind2sub(size(D), I)
     start_points = [x[:]'; y[:]']
     start_points[1, :], start_points[2, :] = start_points[2, :], start_points[1, :]

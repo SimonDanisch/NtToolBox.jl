@@ -22,11 +22,11 @@ function compute_boundary(face)
     j = j[2:end]
     while !(isempty(i))
         b = boundary[end]
-        I = find(i.==b)
+        I = findall(i.==b)
         if isempty(I)
-            I = find(j.==b)
+            I = findall(j.==b)
             if isempty(I)
-                warn("Problem with boundary")
+                @warn("Problem with boundary")
             end
             append!(boundary, i[I])
         else

@@ -78,7 +78,7 @@ function resize_image(f, N)
 	g = cat(2, g, g[:,1,:]);
 	g = cat(1, g, g[1,:,:]);
 	# interpolate
-	t = linspace(1,P,N);
+	t = range(1, stop=P, length=N);
 	ti = floor(t); tj = ceil(t);
 	fi = t-floor(t); fj = 1-fi;
 	h = zeros(N,N,size(f,3));

@@ -118,7 +118,7 @@ function compute_max(X,d)
     """
     if ndims(X)>=2
         Y = maximum(X,d)
-        I = mapslices(indmax,X,d)[:]
+        I = mapslices(argmax,X,d)[:]
     elseif ndims(X)==1
         Y = maximum(X)
         I = indmaw(X)
@@ -129,7 +129,7 @@ end
 function compute_max(X)
     if ndims(X)>=2
         Y = maximum(X,1)
-        I = mapslices(indmax,X,1)[:]
+        I = mapslices(argmax,X,1)[:]
     elseif ndims(X)==1
         Y = maximum(X)
         I = indmaw(X)
