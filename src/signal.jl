@@ -1,9 +1,5 @@
 using PyPlot
 using Images
-using NtToolBox.rescale
-using NtToolBox.Mdot
-
-##
 
 ## Load an image from a file, rescale its dynamic to [0,1], turn it into a grayscale image and resize it to size n x n.
 
