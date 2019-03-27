@@ -28,7 +28,7 @@ end
 
 lgd = []
 for i=1:min(k,size(col,2))
-    I = find(y.==CL[i])
+    I = findall(y.==CL[i])
     if disp_dim==2
         plot(Z[I,1], Z[I,2], "o", c=col[:,i], ms=ms,label=CL[i])
     elseif disp_dim==3 

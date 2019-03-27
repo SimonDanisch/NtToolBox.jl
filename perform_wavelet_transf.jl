@@ -42,7 +42,7 @@ function perform_wavelet_transf(f, Jmin, dir, filter = "9-7",separable = 0, ti =
   if (d == 2) & (separable == 1)
     ti = 0
     if ti == 1
-      warn("Separable does not works for translation invariant transform")
+      @warn("Separable does not works for translation invariant transform")
 
       # perform a separable wavelet transform
     end

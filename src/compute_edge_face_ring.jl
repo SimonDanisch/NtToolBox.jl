@@ -37,7 +37,7 @@ function compute_edge_faces_ring(faces)
     A = sparse(i1,j1,s,n,n)
 
     # add missing points
-    I = find(A'.!=0)
+    I = findall(A'.!=0)
     I = I[A[I].==0]
     A[I]=-1
 
