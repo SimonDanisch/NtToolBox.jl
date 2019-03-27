@@ -1,7 +1,7 @@
-This package contains the Matlab/Scilab, Python and Julia materials for the numerical tours.
+# NtToolBox
 
-These tours are accessible from [the Numerical Tour web site.](http://www.numerical-tours.com)
+[![Build Status](https://travis-ci.org/Ayman/NtToolBox.jl.svg?branch=master)](https://travis-ci.org/Ayman/NtToolBox.jl)
 
-================================
+[![Coverage Status](https://coveralls.io/repos/Ayman/NtToolBox.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/Ayman/NtToolBox.jl?branch=master)
 
-Copyright (c) 2014 Gabriel Peyre
+[![codecov.io](http://codecov.io/github/Ayman/NtToolBox.jl/coverage.svg?branch=master)](http://codecov.io/github/Ayman/NtToolBox.jl?branch=master)
