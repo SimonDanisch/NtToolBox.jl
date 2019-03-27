@@ -13,7 +13,7 @@ function load_image(name, n = -1, flatten = 1, resc = 1, grayscale = 1)
 
   if grayscale == 1
     if (flatten == 1) & (ndims(f) > 2)
-      f = sum(f, 3)   # We must be careful, this returns an array of dimension 512*512*1 while
+      f = sum(f, dims = 3)   # We must be careful, this returns an array of dimension 512*512*1 while
       f = f[:, :]     # in the python file np.sum(f, axis=2) returns an array of dimension 512*512
 
     end
